@@ -1,19 +1,21 @@
 from fastapi import FastAPI
 import uvicorn
-import requests
-from bs4 import BeautifulSoup
-
+import ntplib
+import pytz
+from datetime import datetime
 
 app = FastAPI()
 
+
 @app.get("/time")
 def get_current_time():
-    url= "https://www.horaoficial.cl/"
-    response = requests.get(url)
-    soup = BeautifulSoup(response.txt, 'html.parser')
-    for equisde in soup.find_all("div"):
-        print(equisde.getText)
-    return {"current_time": "ola"}
+    client= ntplib.NTPClient()
+    response= client.request("cl.pool.ntp.org",version=3)
+    response.offset
+    chile_tz = pytz.timezone('America/Santiago')
+    current_time = datetime.fromtimestamp(response.tx_time, chile_tz)
+    return {"current_time": current_time }
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
+    
