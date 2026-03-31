@@ -1,9 +1,9 @@
 from fastapi import FastAPI
 import uvicorn
-import ntplib
 
 app = FastAPI()
-client = ntplib.NTPClient.request("")
+
+
 
 @app.get("/time")
 def get_current_time():
