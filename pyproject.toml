@@ -2,3 +2,13 @@
 dev = [
     "pytest>=9.0.2",
 ]
+[project]
+name = "solemne1"
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "ntplib",
+    "pytz",
+]
