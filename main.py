@@ -1,5 +1,4 @@
 from datetime import datetime
-
 import ntplib
 import pytz
 import uvicorn
