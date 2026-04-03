@@ -1,4 +1,5 @@
 from datetime import datetime
+
 import ntplib
 import uvicorn
 from fastapi import FastAPI
