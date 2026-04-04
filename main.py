@@ -6,7 +6,6 @@ from fastapi import FastAPI
 
 app = FastAPI()
 
-
 @app.get("/time")
 def get_current_time():
     client = ntplib.NTPClient()
