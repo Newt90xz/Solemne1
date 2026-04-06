@@ -10,7 +10,7 @@ Este proyecto implementa:
 - **Pruebas Unitarias** con pytest
 - **Containerización** con Docker
 - **CI/CD Automatizado** con GitHub Actions
-- Hora en zona horaria de **Chile (America/Santiago)**
+- Hora en zona horaria de **Chile (America/Santiago)** utilizando `pytz` para convertir timestamps NTP a datetime con zona horaria
 
 ## Requisitos Previos
 
@@ -171,7 +171,7 @@ Solemne1/
 ## Notas Importantes
 
 - La hora se obtiene desde servidores NTP (`cl.pool.ntp.org`) para garantizar precisión
-- La zona horaria utilizada es **America/Santiago** (Chile UTC-3/-4)
+- La zona horaria utilizada es **America/Santiago** (Chile UTC-3/-4), implementada mediante `pytz.timezone('America/Santiago')` en `datetime.fromtimestamp()`
 - El contenedor Docker expone el puerto **8000**
 - Las pruebas se ejecutan automáticamente en cada push a través de GitHub Actions
 
