@@ -40,7 +40,7 @@ uv pip install -r requirements.txt
 python main.py
 ```
 
-La aplicación estará disponible en `http://localhost:8000`
+La aplicación estará disponible en `http://localhost:8000/time`
 
 ## Uso de la API
 
